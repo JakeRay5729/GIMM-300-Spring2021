@@ -91,22 +91,23 @@ function cardDeath(cardArray, i) {
 function upgrade(){
     var i = parseInt(Math.random() *4);
     if(i == 0) {
-        cardArray[0][0] ++;
-        cardArray[0][1] ++;
+        playerCards[0][0] ++;
+        playerCards[0][1] ++;
     }
     if(i == 1) {
-        cardArray[1][0] ++;
-        cardArray[1][1] ++;
+        playerCards[1][0] ++;
+        playerCards[1][1] ++;
     }
     if(i == 2) {
-        cardArray[2][0] ++;
-        cardArray[2][1] ++;
+        playerCards[2][0] ++;
+        playerCards[2][1] ++;
     }
     else {
         var kill = parseInt(Math.random() * 100 + 1);
-        if(kill % 2 == 1) cardArray[parseInt(Math.random() * 3)][5] = 0;
+        if(kill % 2 == 1) playerCards[parseInt(Math.random() * 3)][5] = 0;
         else enemyCards[parseInt(Math.random() * 3)][5] = 0;
     }
+    updateDisp();
 }
 
 function play() {
